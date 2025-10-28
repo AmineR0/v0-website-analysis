@@ -86,15 +86,6 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1097439023725884"
           crossOrigin="anonymous"
         ></script>
-        <script
-          type="text/javascript"
-          src="//pl27944845.effectivegatecpm.com/8b/20/e2/8b20e23df57453a0c599ace0b6e0496a.js"
-        ></script>
-        <script
-          async
-          data-cfasync="false"
-          src="//pl27944899.effectivegatecpm.com/6d405183dfef146ad0ce8d3328fd49e5/invoke.js"
-        ></script>
       </head>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
