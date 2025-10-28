@@ -825,6 +825,8 @@ export default function BacResultatPage() {
         <footer className="bg-card border-t border-border mt-24 py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
+              <div id="container-6d405183dfef146ad0ce8d3328fd49e5" className="mb-8"></div>
+
               <div className="text-center space-y-6">
                 <div className="flex items-center justify-center gap-6 text-base">
                   <a href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
