@@ -826,6 +826,8 @@ export default function BacResultatPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center space-y-6">
+                <div id="container-6d405183dfef146ad0ce8d3328fd49e5" className="mb-6"></div>
+
                 <div className="flex items-center justify-center gap-6 text-base">
                   <a href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
                     سياسة الخصوصية
@@ -833,6 +835,15 @@ export default function BacResultatPage() {
                   <span className="text-border">|</span>
                   <a href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
                     تواصل معنا
+                  </a>
+                  <span className="text-border">|</span>
+                  <a
+                    href="https://www.effectivegatecpm.com/u1ckzkyw96?key=c6e03d0199539dc95853d047633568fe"
+                    className="text-primary hover:text-primary/80 font-medium transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    إعلانات
                   </a>
                 </div>
                 <div className="space-y-2">
