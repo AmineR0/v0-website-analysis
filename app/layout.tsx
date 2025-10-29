@@ -93,6 +93,11 @@ export default function RootLayout({
           type="text/javascript"
           src="//pl27944845.effectivegatecpm.com/8b/20/e2/8b20e23df57453a0c599ace0b6e0496a.js"
         ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(asy){var d = document,    s = d.createElement('script'),    l = d.scripts[d.scripts.length - 1];s.settings = asy || {};s.src = "//fastblow.com/c.DD9f6Qbx2/5/lkSbWhQb9ZN/jTYg4ZOSTLE/yIMzSM0C2iNIjGg/5EM/TgIRyD";s.async = true;s.referrerPolicy = 'no-referrer-when-downgrade';l.parentNode.insertBefore(s, l);})({})`,
+          }}
+        />
       </head>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
