@@ -48,6 +48,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: "your-google-verification-code",
+    other: {
+      a2ff008dda83ea487ef3ae08272299c4547ac4e9: "a2ff008dda83ea487ef3ae08272299c4547ac4e9",
+    },
   },
   other: {
     "apple-mobile-web-app-capable": "yes",
