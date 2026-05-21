@@ -12,11 +12,12 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
-  title: "حاسبة نتائج البكالوريا المغربية 2025 | Bac Resultat",
+  metadataBase: new URL("https://www.bacresultat.com"),
+  title: "حاسبة نتائج البكالوريا المغربية 2026 | Bac Resultat",
   description:
-    "احسب معدل البكالوريا المغربية بدقة وسهولة. حاسبة مجانية لجميع الشعب والمسالك - العلوم الرياضية، الفيزيائية، الآداب. نتائج الباك 2025",
+    "احسب معدل البكالوريا المغربية بدقة وسهولة. حاسبة مجانية لجميع الشعب والمسالك - العلوم الرياضية، الفيزيائية، الآداب. نتائج الباك 2026",
   keywords:
-    "حاسبة البكالوريا, معدل الباك, نتائج البكالوريا 2025, حساب معدل الباك المغربي, الامتحان الوطني, bac maroc, resultat bac",
+    "حاسبة البكالوريا, معدل الباك, نتائج البكالوريا 2026, حساب معدل الباك المغربي, الامتحان الوطني, bac maroc, resultat bac",
   authors: [{ name: "Bac Resultat" }],
   creator: "Bac Resultat",
   publisher: "Bac Resultat",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ar_MA",
     url: "https://www.bacresultat.com",
-    title: "حاسبة نتائج البكالوريا المغربية 2025 | Bac Resultat",
+    title: "حاسبة نتائج البكالوريا المغربية 2026 | Bac Resultat",
     description: "احسب معدل البكالوريا المغربية بدقة وسهولة. حاسبة مجانية لجميع الشعب والمسالك",
     siteName: "Bac Resultat",
     images: [
@@ -42,12 +43,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "حاسبة نتائج البكالوريا المغربية 2025",
+    title: "حاسبة نتائج البكالوريا المغربية 2026",
     description: "احسب معدل البكالوريا المغربية بدقة وسهولة",
     images: ["/og-image.jpg"],
   },
   verification: {
-    google: "your-google-verification-code",
     other: {
       a2ff008dda83ea487ef3ae08272299c4547ac4e9: "a2ff008dda83ea487ef3ae08272299c4547ac4e9",
     },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-status-bar-style": "default",
     "format-detection": "telephone=no",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({

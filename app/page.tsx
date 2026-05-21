@@ -13,44 +13,56 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 const tracks = {
   literature: [
     { name: "اللغة العربية", coef: 4 },
-    { name: "اللغة الأجنبية الثانية", coef: 2 },
-    { name: "التاريخ والجغرافيا", coef: 4 },
-    { name: "الفلسفة", coef: 2 },
+    { name: "اللغة الأجنبية الثانية", coef: 4 },
+    { name: "التاريخ والجغرافيا", coef: 3 },
+    { name: "الفلسفة", coef: 3 },
   ],
   modern: [
-    { name: "اللغة العربية", coef: 4 },
-    { name: "اللغة الإنجليزية", coef: 2 },
+    { name: "اللغة العربية", coef: 3 },
+    { name: "اللغة الأجنبية الثانية", coef: 3 },
     { name: "التاريخ والجغرافيا", coef: 4 },
-    { name: "الفلسفة", coef: 2 },
+    { name: "الفلسفة", coef: 4 },
   ],
   life: [
     { name: "علوم الحياة والأرض", coef: 7 },
-    { name: "الرياضيات", coef: 5 },
-    { name: "العلوم الفيزيائية", coef: 7 },
-    { name: "اللغة الإنجليزية", coef: 2 },
-    { name: "الفلسفة", coef: 1 },
+    { name: "الرياضيات", coef: 7 },
+    { name: "الفيزياء والكيمياء", coef: 5 },
+    { name: "اللغة الأجنبية الثانية", coef: 2 },
+    { name: "الفلسفة", coef: 2 },
   ],
   physics: [
-    { name: "العلوم الفيزيائية", coef: 7 },
-    { name: "الرياضيات", coef: 5 },
-    { name: "علوم الحياة والأرض", coef: 3 },
-    { name: "اللغة الإنجليزية", coef: 2 },
-    { name: "الفلسفة", coef: 1 },
+    { name: "الفيزياء والكيمياء", coef: 7 },
+    { name: "الرياضيات", coef: 7 },
+    { name: "علوم الحياة والأرض", coef: 5 },
+    { name: "اللغة الأجنبية الثانية", coef: 2 },
+    { name: "الفلسفة", coef: 2 },
   ],
   economics: [
-    { name: "الرياضيات", coef: 2 },
-    { name: "الاقتصاد", coef: 4 },
-    { name: "المحاسبة", coef: 6 },
-    { name: "اللغة الإنجليزية", coef: 2 },
-    { name: "الفلسفة", coef: 1 },
+    { name: "الرياضيات", coef: 4 },
+    { name: "المحاسبة والرياضيات المالية", coef: 4 },
+    { name: "الاقتصاد العام والإحصاء", coef: 6 },
+    { name: "الاقتصاد والتنظيم الإداري للمقاولات", coef: 3 },
+    { name: "اللغة الأجنبية الثانية", coef: 2 },
+    { name: "الفلسفة", coef: 2 },
   ],
   accounting: [
-    { name: "الرياضيات", coef: 2 },
-    { name: "الاقتصاد", coef: 4 },
-    { name: "المحاسبة", coef: 6 },
-    { name: "اللغة الإنجليزية", coef: 2 },
-    { name: "الفلسفة", coef: 1 },
+    { name: "الرياضيات", coef: 4 },
+    { name: "المحاسبة والرياضيات المالية", coef: 6 },
+    { name: "الاقتصاد العام والإحصاء", coef: 3 },
+    { name: "الاقتصاد والتنظيم الإداري للمقاولات", coef: 6 },
+    { name: "اللغة الأجنبية الثانية", coef: 2 },
+    { name: "الفلسفة", coef: 2 },
   ],
+}
+
+const isValidGrade = (value: number) => Number.isFinite(value) && value >= 0 && value <= 20
+
+const getMention = (avg: number) => {
+  if (avg >= 16) return "حسن جدا"
+  if (avg >= 14) return "حسن"
+  if (avg >= 12) return "مستحسن"
+  if (avg >= 10) return "مقبول"
+  return "راسب"
 }
 
 export default function BacResultatPage() {
@@ -81,7 +93,7 @@ export default function BacResultatPage() {
     const c1 = Number.parseFloat(minNational.cont1)
     const c2 = Number.parseFloat(minNational.cont2)
 
-    if ([reg, c1, c2].some((v) => v < 0 || v > 20)) {
+    if ([reg, c1, c2].some((v) => !isValidGrade(v))) {
       setMinNationalError("يرجى إدخال جميع المعدلات بين 0 و 20.")
       return
     }
@@ -112,7 +124,7 @@ export default function BacResultatPage() {
     const r = Number.parseFloat(general.regional)
     const n = Number.parseFloat(general.national)
 
-    if ([c1, c2, r, n].some((v) => v < 0 || v > 20)) {
+    if ([c1, c2, r, n].some((v) => !isValidGrade(v))) {
       setGeneralError("يرجى إدخال جميع المعدلات بين 0 و 20.")
       return
     }
@@ -120,14 +132,7 @@ export default function BacResultatPage() {
     const cont = (c1 + c2) / 2
     const avg = 0.25 * cont + 0.25 * r + 0.5 * n
 
-    let mention = ""
-    if (avg >= 16) mention = "حسن جدا"
-    else if (avg >= 14) mention = "حسن"
-    else if (avg >= 12) mention = "مستحسن"
-    else if (avg >= 10) mention = "مقبول"
-    else mention = "راسب"
-
-    setGeneralResult(`المعدل العام للبكالوريا هو: ${avg.toFixed(2)} | الميزة: ${mention}`)
+    setGeneralResult(`المعدل العام للبكالوريا هو: ${avg.toFixed(2)} | الميزة: ${getMention(avg)}`)
   }
 
   const calcTrack = () => {
@@ -150,7 +155,7 @@ export default function BacResultatPage() {
         return
       }
       const numVal = Number.parseFloat(val)
-      if (numVal < 0 || numVal > 20) {
+      if (!isValidGrade(numVal)) {
         setTrackError("يرجى إدخال جميع النقاط بين 0 و 20.")
         return
       }
@@ -169,7 +174,7 @@ export default function BacResultatPage() {
     const c1 = Number.parseFloat(trackData.cont1)
     const c2 = Number.parseFloat(trackData.cont2)
 
-    if ([reg, c1, c2].some((v) => v < 0 || v > 20)) {
+    if ([reg, c1, c2].some((v) => !isValidGrade(v))) {
       setTrackError("يرجى إدخال جميع المعدلات بين 0 و 20.")
       return
     }
@@ -177,14 +182,7 @@ export default function BacResultatPage() {
     const cont = (c1 + c2) / 2
     const avg = 0.25 * cont + 0.25 * reg + 0.5 * national
 
-    let mention = ""
-    if (avg >= 16) mention = "حسن جدا"
-    else if (avg >= 14) mention = "حسن"
-    else if (avg >= 12) mention = "مستحسن"
-    else if (avg >= 10) mention = "مقبول"
-    else mention = "راسب"
-
-    setTrackResult(`معدل الوطني: ${national.toFixed(2)} | المعدل العام: ${avg.toFixed(2)} | الميزة: ${mention}`)
+    setTrackResult(`معدل الوطني: ${national.toFixed(2)} | المعدل العام: ${avg.toFixed(2)} | الميزة: ${getMention(avg)}`)
   }
 
   return (
@@ -221,7 +219,7 @@ export default function BacResultatPage() {
               حساب معدل البكالوريا بالمغرب
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              أسرع وأدق طريقة لحساب معدل الباك الوطني والجهوي لجميع الشعب والمسالك 2025
+              أسرع وأدق طريقة لحساب معدل الباك الوطني والجهوي لجميع الشعب والمسالك 2026
             </p>
           </div>
         </div>
@@ -541,8 +539,8 @@ export default function BacResultatPage() {
                         <SelectValue placeholder="-- اختر الشعبة --" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="literature">الآداب والعلوم الإنسانية</SelectItem>
-                        <SelectItem value="modern">الآداب العصرية</SelectItem>
+                        <SelectItem value="literature">الآداب</SelectItem>
+                        <SelectItem value="modern">العلوم الإنسانية</SelectItem>
                         <SelectItem value="life">علوم الحياة والأرض</SelectItem>
                         <SelectItem value="physics">العلوم الفيزيائية</SelectItem>
                         <SelectItem value="economics">العلوم الاقتصادية</SelectItem>
@@ -692,7 +690,7 @@ export default function BacResultatPage() {
                   mainEntity: [
                     {
                       "@type": "Question",
-                      name: "كيف أحسب معدل الباك 2024/2025؟",
+                      name: "كيف أحسب معدل الباك 2026؟",
                       acceptedAnswer: {
                         "@type": "Answer",
                         text: "أدخل معدل المراقبة المستمرة، الجهوي، والوطني في الحاسبة أعلاه واضغط 'احسب المعدل العام'.",
@@ -746,7 +744,7 @@ export default function BacResultatPage() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="item-1" className="bg-card border-2 rounded-xl px-6 shadow-sm">
                 <AccordionTrigger className="text-right text-lg font-semibold hover:no-underline py-5">
-                  كيف أحسب معدل الباك 2024/2025؟
+                  كيف أحسب معدل الباك 2026؟
                 </AccordionTrigger>
                 <AccordionContent className="text-right text-base leading-relaxed pb-5 text-muted-foreground">
                   أدخل معدل المراقبة المستمرة، الجهوي، والوطني في الحاسبة أعلاه واضغط "احسب المعدل العام".
@@ -813,7 +811,7 @@ export default function BacResultatPage() {
                     العلوم الفيزيائية، علوم الحياة والأرض، الآداب، والعلوم الإنسانية.
                   </p>
                   <p className="text-lg">
-                    يمكنك حساب معدل الامتحان الوطني، المعدل العام، ومعرفة فرص نجاحك في البكالوريا 2025. حاسابتنا محدثة
+                    يمكنك حساب معدل الامتحان الوطني، المعدل العام، ومعرفة فرص نجاحك في البكالوريا 2026. حاسبتنا محدثة
                     وفقاً لآخر التعديلات من وزارة التربية الوطنية المغربية.
                   </p>
                 </div>
@@ -826,9 +824,17 @@ export default function BacResultatPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="text-center space-y-6">
-                <div className="flex items-center justify-center gap-6 text-base">
+                <div className="flex flex-wrap items-center justify-center gap-4 text-base">
+                  <a href="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                    من نحن
+                  </a>
+                  <span className="text-border">|</span>
                   <a href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
                     سياسة الخصوصية
+                  </a>
+                  <span className="text-border">|</span>
+                  <a href="/terms" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                    شروط الاستخدام
                   </a>
                   <span className="text-border">|</span>
                   <a href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
@@ -836,9 +842,9 @@ export default function BacResultatPage() {
                   </a>
                 </div>
                 <div className="space-y-2">
-                  <p className="text-foreground font-semibold">© 2025 bacresultat.com</p>
+                  <p className="text-foreground font-semibold">© 2026 bacresultat.com</p>
                   <p className="text-sm text-muted-foreground">
-                    حاسبة معدل البكالوريا المغربية - نتائج الباك 2025 - جميع الحقوق محفوظة
+                    حاسبة معدل البكالوريا المغربية - نتائج الباك 2026 - جميع الحقوق محفوظة
                   </p>
                 </div>
               </div>

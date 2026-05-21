@@ -3,8 +3,8 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Shield } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "سياسة الخصوصية | حاسبة معدل البكالوريا المغربية",
-  description: "سياسة الخصوصية لموقع حاسبة معدل البكالوريا المغربية - نحترم خصوصيتك ونحمي بياناتك",
+  title: "سياسة الخصوصية 2026 | حاسبة معدل البكالوريا المغربية",
+  description: "سياسة الخصوصية لموقع حاسبة معدل البكالوريا المغربية، بما في ذلك ملفات تعريف الارتباط وإعلانات Google.",
 }
 
 export default function PrivacyPage() {
@@ -33,18 +33,19 @@ export default function PrivacyPage() {
 
               <div className="space-y-6 text-right">
                 <p className="text-lg leading-relaxed text-muted-foreground">
-                  نحن نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. باستخدامك لموقع{" "}
-                  <strong className="text-foreground">حاسبة معدل البكالوريا لجميع الشعب</strong>، فإنك توافق على سياسة
-                  الخصوصية التالية:
+                  آخر تحديث: 21 ماي 2026. نحن نحترم خصوصيتك ونلتزم بتوضيح طريقة عمل موقع{" "}
+                  <strong className="text-foreground">bacresultat.com</strong>. تهدف هذه الصفحة إلى شرح البيانات
+                  والتقنيات التي قد تستعمل عند استخدام الحاسبة أو عند عرض الإعلانات والتحليلات.
                 </p>
 
                 <div className="space-y-4">
                   <h2 className="text-2xl font-bold text-foreground">المعلومات التي نجمعها</h2>
                   <ul className="list-disc list-inside space-y-2 text-lg text-muted-foreground mr-4">
-                    <li>لا نقوم بجمع أي بيانات شخصية منك عند استخدام الحاسبة.</li>
+                    <li>لا نطلب منك إنشاء حساب ولا ندخل نقاطك في قاعدة بيانات عند استخدام الحاسبة.</li>
+                    <li>النقط التي تكتبها في الحاسبة تستعمل داخل المتصفح فقط لإظهار النتيجة.</li>
                     <li>
-                      قد تستخدم خدمات إعلانات Google (مثل AdSense) ملفات تعريف الارتباط (Cookies) لجمع بيانات غير شخصية
-                      لأغراض إعلانية.
+                      قد نستعمل أدوات تحليل مثل Google Analytics لفهم عدد الزيارات والصفحات الأكثر استعمالا وتحسين
+                      تجربة المستخدم.
                     </li>
                   </ul>
                 </div>
@@ -52,16 +53,57 @@ export default function PrivacyPage() {
                 <div className="space-y-4">
                   <h2 className="text-2xl font-bold text-foreground">ملفات تعريف الارتباط (Cookies)</h2>
                   <p className="text-lg leading-relaxed text-muted-foreground">
-                    يستخدم الموقع ملفات تعريف الارتباط لتحسين تجربة المستخدم وعرض الإعلانات. يمكنك تعطيل الكوكيز من
-                    إعدادات المتصفح الخاص بك.
+                    قد تستخدم Google وشركاؤها ملفات تعريف الارتباط أو معرفات مشابهة لعرض الإعلانات وقياس أدائها
+                    وتحسين الخدمات. يمكنك تعطيل ملفات تعريف الارتباط أو حذفها من إعدادات المتصفح في أي وقت.
                   </p>
                 </div>
 
                 <div className="space-y-4">
                   <h2 className="text-2xl font-bold text-foreground">إعلانات Google AdSense</h2>
                   <p className="text-lg leading-relaxed text-muted-foreground">
-                    قد تعرض Google وشركاؤها إعلانات على هذا الموقع. قد تستخدم Google ملفات تعريف الارتباط لعرض الإعلانات
-                    بناءً على زياراتك السابقة لهذا الموقع أو لمواقع أخرى.
+                    قد تعرض Google وموردون خارجيون آخرون إعلانات على هذا الموقع. تستخدم Google ملفات تعريف الارتباط
+                    الإعلانية لتمكينها وشركائها من عرض إعلانات بناء على زيارتك لهذا الموقع أو لمواقع أخرى على الإنترنت.
+                    يمكن للمستخدمين إيقاف تخصيص الإعلانات من خلال{" "}
+                    <a
+                      href="https://adssettings.google.com"
+                      className="text-primary hover:text-primary/80 font-medium transition-colors"
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                    >
+                      إعدادات إعلانات Google
+                    </a>
+                    ، ويمكنهم أيضا الاطلاع على طريقة استخدام Google للبيانات عبر{" "}
+                    <a
+                      href="https://policies.google.com/technologies/partner-sites"
+                      className="text-primary hover:text-primary/80 font-medium transition-colors"
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                    >
+                      صفحة شركاء Google
+                    </a>
+                    .
+                  </p>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    إذا استعمل الموقع شبكات إعلانية أو موردين خارجيين إضافيين، فقد يستخدم هؤلاء ملفات تعريف ارتباط أو
+                    تقنيات مشابهة وفق سياسات الخصوصية الخاصة بهم. يمكنك إدارة بعض خيارات الإعلانات المخصصة عبر{" "}
+                    <a
+                      href="https://www.aboutads.info/choices/"
+                      className="text-primary hover:text-primary/80 font-medium transition-colors"
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                    >
+                      aboutads.info
+                    </a>
+                    .
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <h2 className="text-2xl font-bold text-foreground">سلامة المحتوى والإعلانات</h2>
+                  <p className="text-lg leading-relaxed text-muted-foreground">
+                    الموقع موجه للتلاميذ والأسر والمهتمين بالتوجيه الدراسي، ولا ننشر محتوى للبالغين أو محتوى يحرض على
+                    العنف أو الغش أو أي نشاط غير قانوني. نسعى إلى إبقاء تجربة الإعلانات مناسبة وآمنة ومتصلة بطبيعة
+                    الموقع التعليمية.
                   </p>
                 </div>
 
@@ -105,9 +147,17 @@ export default function PrivacyPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-6">
-              <div className="flex items-center justify-center gap-6 text-base">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-base">
+                <a href="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  من نحن
+                </a>
+                <span className="text-border">|</span>
                 <a href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   سياسة الخصوصية
+                </a>
+                <span className="text-border">|</span>
+                <a href="/terms" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  شروط الاستخدام
                 </a>
                 <span className="text-border">|</span>
                 <a href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
@@ -115,9 +165,9 @@ export default function PrivacyPage() {
                 </a>
               </div>
               <div className="space-y-2">
-                <p className="text-foreground font-semibold">© 2025 bacresultat.com</p>
+                <p className="text-foreground font-semibold">© 2026 bacresultat.com</p>
                 <p className="text-sm text-muted-foreground">
-                  حاسبة معدل البكالوريا المغربية - نتائج الباك 2025 - جميع الحقوق محفوظة
+                  حاسبة معدل البكالوريا المغربية - نتائج الباك 2026 - جميع الحقوق محفوظة
                 </p>
               </div>
             </div>

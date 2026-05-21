@@ -33,7 +33,8 @@ export default function ContactPage() {
 
               <div className="text-center space-y-4">
                 <p className="text-lg text-muted-foreground">
-                  لأي استفسار أو اقتراح، يمكنك مراسلتنا عبر البريد الإلكتروني:
+                  لأي استفسار حول الحاسبة أو الخصوصية أو الإعلانات أو تصحيح معلومة، يمكنك مراسلتنا عبر البريد
+                  الإلكتروني:
                 </p>
 
                 <a
@@ -44,7 +45,10 @@ export default function ContactPage() {
                   bacresult.site@gmail.com
                 </a>
 
-                <p className="text-muted-foreground pt-4">أو راسلنا مباشرة عبر البريد الإلكتروني أعلاه.</p>
+                <p className="text-muted-foreground pt-4">
+                  نحاول الرد على الرسائل المهمة في أقرب وقت ممكن، خصوصا الملاحظات المتعلقة بدقة الحسابات أو سياسات
+                  الموقع.
+                </p>
               </div>
 
               <div className="pt-6 text-center">
@@ -61,9 +65,17 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-6">
-              <div className="flex items-center justify-center gap-6 text-base">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-base">
+                <a href="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  من نحن
+                </a>
+                <span className="text-border">|</span>
                 <a href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   سياسة الخصوصية
+                </a>
+                <span className="text-border">|</span>
+                <a href="/terms" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  شروط الاستخدام
                 </a>
                 <span className="text-border">|</span>
                 <a href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
@@ -71,9 +83,9 @@ export default function ContactPage() {
                 </a>
               </div>
               <div className="space-y-2">
-                <p className="text-foreground font-semibold">© 2025 bacresultat.com</p>
+                <p className="text-foreground font-semibold">© 2026 bacresultat.com</p>
                 <p className="text-sm text-muted-foreground">
-                  حاسبة معدل البكالوريا المغربية - نتائج الباك 2025 - جميع الحقوق محفوظة
+                  حاسبة معدل البكالوريا المغربية - نتائج الباك 2026 - جميع الحقوق محفوظة
                 </p>
               </div>
             </div>

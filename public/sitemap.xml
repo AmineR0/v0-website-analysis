@@ -5,11 +5,19 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.bacresultat.com/privacy.html</loc>
-    <priority>0.5</priority>
+    <loc>https://www.bacresultat.com/about</loc>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.bacresultat.com/contact.html</loc>
-    <priority>0.5</priority>
+    <loc>https://www.bacresultat.com/privacy</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bacresultat.com/terms</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.bacresultat.com/contact</loc>
+    <priority>0.6</priority>
   </url>
 </urlset>
