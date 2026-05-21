@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { guideLinks } from "@/lib/guides"
 
 const tracks = {
   literature: [
@@ -818,6 +819,30 @@ export default function BacResultatPage() {
               </CardContent>
             </Card>
           </article>
+
+          <section aria-labelledby="guides-section" className="mt-20 max-w-5xl mx-auto">
+            <div className="text-center mb-10 space-y-3">
+              <h2 id="guides-section" className="text-3xl md:text-4xl font-bold text-foreground">
+                دلائل مفيدة حول معدل البكالوريا
+              </h2>
+              <p className="text-muted-foreground text-lg">
+                شروحات قصيرة تساعدك على فهم طريقة الحساب والمعاملات حسب الشعبة
+              </p>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {guideLinks.map((guide) => (
+                <a
+                  key={guide.href}
+                  href={guide.href}
+                  className="block rounded-lg border-2 bg-card p-5 text-right shadow-sm transition-all hover:border-primary/50 hover:shadow-md"
+                >
+                  <h3 className="text-xl font-bold text-foreground">{guide.title}</h3>
+                  <p className="mt-2 text-base leading-relaxed text-muted-foreground">{guide.description}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </main>
 
         <footer className="bg-card border-t border-border mt-24 py-12">

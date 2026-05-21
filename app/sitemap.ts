@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next"
+import { guides } from "@/lib/guides"
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.bacresultat.com"
   const lastModified = new Date()
 
-  return [
+  const corePages: MetadataRoute.Sitemap = [
     {
       url: baseUrl,
       lastModified,
@@ -36,4 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
   ]
+
+  const guidePages: MetadataRoute.Sitemap = guides.map((guide) => ({
+    url: `${baseUrl}/guides/${guide.slug}`,
+    lastModified,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }))
+
+  return [...corePages, ...guidePages]
 }
