@@ -843,6 +843,24 @@ export default function BacResultatPage() {
               ))}
             </div>
           </section>
+
+          <aside aria-label="إعلان ممول" className="mt-12 max-w-4xl mx-auto">
+            <div className="rounded-lg border-2 border-dashed border-secondary bg-secondary/10 p-6 text-center">
+              <p className="mb-2 text-sm font-semibold text-muted-foreground">إعلان</p>
+              <h2 className="text-2xl font-bold text-foreground">عروض مختارة قد تهم الزوار</h2>
+              <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                يمكنك الاطلاع على عروض خارجية من شركائنا. سيتم فتح الرابط في صفحة جديدة خارج موقع bacresultat.com.
+              </p>
+              <a
+                href="https://omg10.com/4/11046614"
+                target="_blank"
+                rel="nofollow sponsored noopener noreferrer"
+                className="mt-5 inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-base font-semibold text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
+              >
+                عرض الإعلان
+              </a>
+            </div>
+          </aside>
         </main>
 
         <footer className="bg-card border-t border-border mt-24 py-12">
