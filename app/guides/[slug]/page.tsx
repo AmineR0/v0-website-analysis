@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import { notFound } from "next/navigation"
 import { BookOpen } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -51,6 +52,24 @@ export default function GuidePage({ params }: GuidePageProps) {
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
+      <Script id="monetag-vignette-guides" strategy="afterInteractive">
+        {`
+          (function () {
+            var storageKey = "monetagVignetteLoadedAt";
+            var now = Date.now();
+            var lastLoaded = Number(sessionStorage.getItem(storageKey) || 0);
+
+            if (lastLoaded && now - lastLoaded < 30 * 60 * 1000) {
+              return;
+            }
+
+            window.setTimeout(function () {
+              sessionStorage.setItem(storageKey, String(Date.now()));
+              (function(s){s.dataset.zone='11047976',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+            }, 15000);
+          })();
+        `}
+      </Script>
       <header className="bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center space-y-3">
