@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Cairo } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { Suspense } from "react"
 
@@ -92,6 +93,9 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
+        <Script id="monetag-in-page-push" strategy="afterInteractive">
+          {`(function(s){s.dataset.zone='11046549',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
+        </Script>
       </body>
     </html>
   )
