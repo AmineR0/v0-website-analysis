@@ -96,6 +96,24 @@ export default function RootLayout({
         <Script id="monetag-in-page-push" strategy="afterInteractive">
           {`(function(s){s.dataset.zone='11046549',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))`}
         </Script>
+        <Script id="monetag-vignette" strategy="afterInteractive">
+          {`
+            (function () {
+              var storageKey = "monetagVignetteLoadedAt";
+              var now = Date.now();
+              var lastLoaded = Number(sessionStorage.getItem(storageKey) || 0);
+
+              if (lastLoaded && now - lastLoaded < 30 * 60 * 1000) {
+                return;
+              }
+
+              window.setTimeout(function () {
+                sessionStorage.setItem(storageKey, String(Date.now()));
+                (function(s){s.dataset.zone='11047976',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+              }, 15000);
+            })();
+          `}
+        </Script>
       </body>
     </html>
   )

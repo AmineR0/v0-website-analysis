@@ -85,6 +85,22 @@ export default function GuidePage({ params }: GuidePageProps) {
                 ))}
               </div>
 
+              <aside aria-label="إعلان ممول" className="rounded-lg border border-secondary bg-secondary/10 p-5 text-center">
+                <p className="text-sm font-semibold text-muted-foreground">إعلان</p>
+                <h2 className="mt-2 text-xl font-bold text-foreground">اكتشف عروض وخدمات متاحة الآن</h2>
+                <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                  رابط خارجي ممول يفتح في صفحة جديدة.
+                </p>
+                <a
+                  href="https://omg10.com/4/11046614"
+                  target="_blank"
+                  rel="nofollow sponsored noopener noreferrer"
+                  className="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
+                >
+                  فتح العرض
+                </a>
+              </aside>
+
               <div className="pt-6 text-center border-t">
                 <a href="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   ← استخدم الحاسبة الآن

@@ -40,4 +40,24 @@
     <loc>https://www.bacresultat.com/guides/life-science-bac-average</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.bacresultat.com/guides/literature-bac-average</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bacresultat.com/guides/humanities-bac-average</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bacresultat.com/guides/economics-bac-average</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bacresultat.com/guides/accounting-bac-average</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.bacresultat.com/guides/resit-exam-score</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
