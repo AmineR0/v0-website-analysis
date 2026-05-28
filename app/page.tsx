@@ -807,13 +807,16 @@ export default function BacResultatPage() {
                 </h2>
                 <div className="space-y-4 text-right leading-relaxed text-muted-foreground">
                   <p className="text-lg">
-                    موقع <strong className="text-foreground">bacresultat.com</strong> هو أفضل موقع لحساب معدل البكالوريا
-                    المغربية بدقة وسهولة. نوفر لك حاسبة متطورة تدعم جميع الشعب والمسالك، بما في ذلك العلوم الرياضية،
-                    العلوم الفيزيائية، علوم الحياة والأرض، الآداب، والعلوم الإنسانية.
+                    موقع <strong className="text-foreground">bacresultat.com</strong> أداة تعليمية مستقلة تساعد التلاميذ
+                    على حساب معدل البكالوريا المغربية وفهم تأثير الوطني والجهوي والمراقبة المستمرة على النتيجة النهائية.
                   </p>
                   <p className="text-lg">
-                    يمكنك حساب معدل الامتحان الوطني، المعدل العام، ومعرفة فرص نجاحك في البكالوريا 2026. حاسبتنا محدثة
-                    وفقاً لآخر التعديلات من وزارة التربية الوطنية المغربية.
+                    يمكنك حساب معدل الامتحان الوطني حسب الشعبة، المعدل العام، وأقل نقطة تقريبية تحتاجها للنجاح في
+                    البكالوريا 2026. النتائج المعروضة تقديرية وتبقى النتائج الرسمية هي المرجع النهائي.
+                  </p>
+                  <p className="text-lg">
+                    تعتمد الحاسبة على الصيغة العامة: 50% للامتحان الوطني، 25% للامتحان الجهوي، و25% للمراقبة المستمرة،
+                    مع تطبيق معاملات مواد الوطني حسب الشعبة أو المسلك.
                   </p>
                 </div>
               </CardContent>
@@ -844,23 +847,6 @@ export default function BacResultatPage() {
             </div>
           </section>
 
-          <aside aria-label="إعلان ممول" className="mt-12 max-w-4xl mx-auto">
-            <div className="rounded-lg border-2 border-dashed border-secondary bg-secondary/10 p-6 text-center">
-              <p className="mb-2 text-sm font-semibold text-muted-foreground">إعلان</p>
-              <h2 className="text-2xl font-bold text-foreground">عروض مختارة قد تهم الزوار</h2>
-              <p className="mx-auto mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                يمكنك الاطلاع على عروض خارجية من شركائنا. سيتم فتح الرابط في صفحة جديدة خارج موقع bacresultat.com.
-              </p>
-              <a
-                href="https://omg10.com/4/11046614"
-                target="_blank"
-                rel="nofollow sponsored noopener noreferrer"
-                className="mt-5 inline-flex h-12 items-center justify-center rounded-md bg-primary px-6 text-base font-semibold text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
-              >
-                عرض الإعلان
-              </a>
-            </div>
-          </aside>
         </main>
 
         <footer className="bg-card border-t border-border mt-24 py-12">

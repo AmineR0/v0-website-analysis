@@ -1,5 +1,4 @@
 import type { Metadata } from "next"
-import Script from "next/script"
 import { notFound } from "next/navigation"
 import { BookOpen } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
@@ -52,24 +51,6 @@ export default function GuidePage({ params }: GuidePageProps) {
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
-      <Script id="monetag-vignette-guides" strategy="afterInteractive">
-        {`
-          (function () {
-            var storageKey = "monetagVignetteLoadedAt";
-            var now = Date.now();
-            var lastLoaded = Number(sessionStorage.getItem(storageKey) || 0);
-
-            if (lastLoaded && now - lastLoaded < 30 * 60 * 1000) {
-              return;
-            }
-
-            window.setTimeout(function () {
-              sessionStorage.setItem(storageKey, String(Date.now()));
-              (function(s){s.dataset.zone='11047976',s.src='https://n6wxm.com/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-            }, 15000);
-          })();
-        `}
-      </Script>
       <header className="bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center space-y-3">
@@ -104,21 +85,17 @@ export default function GuidePage({ params }: GuidePageProps) {
                 ))}
               </div>
 
-              <aside aria-label="إعلان ممول" className="rounded-lg border border-secondary bg-secondary/10 p-5 text-center">
-                <p className="text-sm font-semibold text-muted-foreground">إعلان</p>
-                <h2 className="mt-2 text-xl font-bold text-foreground">اكتشف عروض وخدمات متاحة الآن</h2>
-                <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                  رابط خارجي ممول يفتح في صفحة جديدة.
+              <section className="rounded-lg border bg-muted/40 p-5 text-right">
+                <h2 className="text-xl font-bold text-foreground">منهجية الحساب والتنبيه</h2>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  تعتمد الشروحات والحاسبات على الصيغة العامة المتداولة لحساب معدل البكالوريا المغربية: 50% للامتحان
+                  الوطني، 25% للامتحان الجهوي، و25% للمراقبة المستمرة، مع استعمال معاملات مواد الوطني حسب الشعبة.
                 </p>
-                <a
-                  href="https://omg10.com/4/11046614"
-                  target="_blank"
-                  rel="nofollow sponsored noopener noreferrer"
-                  className="mt-4 inline-flex h-10 items-center justify-center rounded-md bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-xs transition-all hover:bg-primary/90"
-                >
-                  فتح العرض
-                </a>
-              </aside>
+                <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+                  هذه النتائج تقديرية وتهدف إلى المساعدة على الفهم والتخطيط. تبقى النتائج والوثائق الرسمية الصادرة عن
+                  المؤسسات التعليمية والجهات المختصة هي المرجع النهائي.
+                </p>
+              </section>
 
               <div className="pt-6 text-center border-t">
                 <a href="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
