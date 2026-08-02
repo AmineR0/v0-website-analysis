@@ -1,12 +1,13 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Cairo } from "next/font/google"
+import Script from "next/script"
 import "./globals.css"
 import { Suspense } from "react"
 
 const cairo = Cairo({
   subsets: ["arabic", "latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "700"],
   variable: "--font-cairo",
   display: "swap",
 })
@@ -71,27 +72,30 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <meta name="theme-color" content="#3b82f6" />
-        {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YY232N7GWV"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-YY232N7GWV');
-            `,
-          }}
-        />
-        {/* Google AdSense */}
-        <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1097439023725884"
-          crossOrigin="anonymous"
-        ></script>
       </head>
       <body className="font-sans antialiased">
         <Suspense fallback={null}>{children}</Suspense>
+
+        {/* Google Analytics — loaded after page becomes interactive */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-YY232N7GWV"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-YY232N7GWV');
+          `}
+        </Script>
+
+        {/* Google AdSense — loaded lazily after page interaction */}
+        <Script
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1097439023725884"
+          crossOrigin="anonymous"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   )

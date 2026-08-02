@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import { FileText } from "lucide-react"
 
@@ -73,18 +74,18 @@ export default function TermsPage() {
                   <h2 className="text-2xl font-bold text-foreground">التواصل</h2>
                   <p className="text-lg leading-relaxed text-muted-foreground">
                     لأي سؤال حول هذه الشروط أو لاقتراح تصحيح، يمكنك التواصل معنا عبر{" "}
-                    <a href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                    <Link href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
                       صفحة التواصل
-                    </a>
+                    </Link>
                     .
                   </p>
                 </div>
               </div>
 
               <div className="pt-6 text-center border-t">
-                <a href="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                <Link href="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   ← العودة إلى الصفحة الرئيسية
-                </a>
+                </Link>
               </div>
             </CardContent>
           </Card>
@@ -96,21 +97,21 @@ export default function TermsPage() {
           <div className="max-w-4xl mx-auto">
             <div className="text-center space-y-6">
               <div className="flex flex-wrap items-center justify-center gap-4 text-base">
-                <a href="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                <Link href="/about" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   من نحن
-                </a>
+                </Link>
                 <span className="text-border">|</span>
-                <a href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                <Link href="/privacy" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   سياسة الخصوصية
-                </a>
+                </Link>
                 <span className="text-border">|</span>
-                <a href="/terms" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                <Link href="/terms" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   شروط الاستخدام
-                </a>
+                </Link>
                 <span className="text-border">|</span>
-                <a href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
+                <Link href="/contact" className="text-primary hover:text-primary/80 font-medium transition-colors">
                   تواصل معنا
-                </a>
+                </Link>
               </div>
               <div className="space-y-2">
                 <p className="text-foreground font-semibold">© 2026 bacresultat.com</p>
