@@ -39,11 +39,11 @@ export default function ContactPage() {
                 </p>
 
                 <a
-                  href="mailto:contact@bacresultat.com"
+                  href="mailto:bacresultatcontact@gmail.com"
                   className="inline-block text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
                   dir="ltr"
                 >
-                  contact@bacresultat.com
+                  bacresultatcontact@gmail.com
                 </a>
 
                 <p className="text-muted-foreground pt-4">
