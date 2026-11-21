@@ -1,11 +1,23 @@
 import Link from "next/link"
-import { CheckCircle2 } from "lucide-react"
+import type { Metadata } from "next"
 import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { guideLinks } from "@/lib/guides"
 import MinNationalCalculator from "@/components/calculators/MinNationalCalculator"
 import GeneralCalculator from "@/components/calculators/GeneralCalculator"
 import TrackCalculator from "@/components/calculators/TrackCalculator"
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    locale: "ar_MA",
+    siteName: "Bac Resultat",
+    title: "حساب معدل البكالوريا بالمغرب",
+    description: "احسب معدل الباك والنقطة المطلوبة في الامتحان الوطني.",
+  },
+}
 
 export default function BacResultatPage() {
   return (
@@ -18,18 +30,13 @@ export default function BacResultatPage() {
             "@context": "https://schema.org",
             "@type": "WebApplication",
             name: "حاسبة نتائج البكالوريا المغربية",
-            description: "احسب معدل البكالوريا المغربية بسهولة - حاسبة دقيقة لجميع الشعب والمسالك",
+            description: "حساب معدل البكالوريا المغربية من معدلات الجهوي والوطني والمراقبة المستمرة.",
             applicationCategory: "EducationalApplication",
             operatingSystem: "Any",
             offers: {
               "@type": "Offer",
               price: "0",
               priceCurrency: "MAD",
-            },
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              ratingCount: "15420",
             },
           }),
         }}
@@ -42,7 +49,7 @@ export default function BacResultatPage() {
               حساب معدل البكالوريا بالمغرب
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              أسرع وأدق طريقة لحساب معدل الباك الوطني والجهوي لجميع الشعب والمسالك 2026
+              احسب معدلك من نقط الجهوي والوطني والمراقبة المستمرة، أو جرّب نقطاً مختلفة قبل صدور النتائج.
             </p>
           </div>
         </div>
@@ -52,10 +59,6 @@ export default function BacResultatPage() {
         <section className="bg-gradient-to-b from-primary/5 to-transparent py-12 md:py-16">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-6">
-              <div className="inline-flex items-center gap-2 bg-accent/10 text-accent px-4 py-2 rounded-full text-sm font-medium">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>موثوق من قبل أكثر من 15,000 طالب</span>
-              </div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground">احسب نتائجك بدقة وسهولة</h2>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 استخدم حاسباتنا الثلاث المتخصصة لمعرفة معدلك، أقل نقطة تحتاجها للنجاح، وميزتك في البكالوريا
@@ -89,7 +92,7 @@ export default function BacResultatPage() {
                   mainEntity: [
                     {
                       "@type": "Question",
-                      name: "كيف أحسب معدل الباك 2026؟",
+                      name: "كيف أحسب معدل الباك؟",
                       acceptedAnswer: {
                         "@type": "Answer",
                         text: "أدخل معدل المراقبة المستمرة، الجهوي، والوطني في الحاسبة أعلاه واضغط 'احسب المعدل العام'.",
@@ -116,7 +119,7 @@ export default function BacResultatPage() {
                       name: "هل الحاسبة تدعم جميع الشعب والمسالك؟",
                       acceptedAnswer: {
                         "@type": "Answer",
-                        text: "نعم، يمكنك اختيار الشعبة وسيتم حساب المعدل بدقة حسب معاملات المواد.",
+                        text: "حساب الوطني من نقط المواد متاح للمسالك الموجودة في القائمة. إذا لم تجد مسلكك، يمكنك إدخال معدل الوطني مباشرة في حاسبة المعدل العام.",
                       },
                     },
                     {
@@ -143,7 +146,7 @@ export default function BacResultatPage() {
             <Accordion type="single" collapsible className="w-full space-y-3">
               <AccordionItem value="item-1" className="bg-card border-2 rounded-xl px-6 shadow-sm">
                 <AccordionTrigger className="text-right text-lg font-semibold hover:no-underline py-5">
-                  كيف أحسب معدل الباك 2026؟
+                  كيف أحسب معدل الباك؟
                 </AccordionTrigger>
                 <AccordionContent className="text-right text-base leading-relaxed pb-5 text-muted-foreground">
                   أدخل معدل المراقبة المستمرة، الجهوي، والوطني في الحاسبة أعلاه واضغط &quot;احسب المعدل العام&quot;.
@@ -173,7 +176,7 @@ export default function BacResultatPage() {
                   هل الحاسبة تدعم جميع الشعب والمسالك؟
                 </AccordionTrigger>
                 <AccordionContent className="text-right text-base leading-relaxed pb-5 text-muted-foreground">
-                  نعم، يمكنك اختيار الشعبة وسيتم حساب المعدل بدقة حسب معاملات المواد.
+                  حساب الوطني من نقط المواد متاح للمسالك الموجودة في القائمة. إذا لم تجد مسلكك، يمكنك إدخال معدل الوطني مباشرة في حاسبة المعدل العام.
                 </AccordionContent>
               </AccordionItem>
 
@@ -210,11 +213,16 @@ export default function BacResultatPage() {
                   </p>
                   <p className="text-lg">
                     يمكنك حساب معدل الامتحان الوطني حسب الشعبة، المعدل العام، وأقل نقطة تقريبية تحتاجها للنجاح في
-                    البكالوريا 2026. النتائج المعروضة تقديرية وتبقى النتائج الرسمية هي المرجع النهائي.
+                    البكالوريا. النتائج المعروضة تقديرية وتبقى النتائج الرسمية هي المرجع النهائي.
                   </p>
                   <p className="text-lg">
                     تعتمد الحاسبة على الصيغة العامة: 50% للامتحان الوطني، 25% للامتحان الجهوي، و25% للمراقبة المستمرة،
                     مع تطبيق معاملات مواد الوطني حسب الشعبة أو المسلك.
+                  </p>
+                  <p className="text-lg">
+                    مثال: إذا حصلت على 12 في الدورة الأولى و16 في الثانية، فمعدل المراقبة المستمرة هو 14.
+                    ومع 10 في الجهوي و12 في الوطني، يكون معدلك العام 12 من 20: تساهم المراقبة بـ3.5 نقط،
+                    والجهوي بـ2.5، والوطني بـ6. وبنفس نقط المراقبة والجهوي، يكفي معدل 8 في الوطني لبلوغ 10 من 20 حسابياً.
                   </p>
                 </div>
               </CardContent>
@@ -271,7 +279,7 @@ export default function BacResultatPage() {
                 <div className="space-y-2">
                   <p className="text-foreground font-semibold">© 2026 bacresultat.com</p>
                   <p className="text-sm text-muted-foreground">
-                    حاسبة معدل البكالوريا المغربية - نتائج الباك 2026 - جميع الحقوق محفوظة
+                    حاسبة معدل البكالوريا المغربية - جميع الحقوق محفوظة
                   </p>
                 </div>
               </div>

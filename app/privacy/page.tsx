@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Shield } from "lucide-react"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/privacy" },
   title: "سياسة الخصوصية 2026 | حاسبة معدل البكالوريا المغربية",
   description: "سياسة الخصوصية لموقع حاسبة معدل البكالوريا المغربية، بما في ذلك ملفات تعريف الارتباط وإعلانات Google.",
 }

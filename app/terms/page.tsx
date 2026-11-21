@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { FileText } from "lucide-react"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/terms" },
   title: "شروط الاستخدام | حاسبة معدل البكالوريا المغربية",
   description: "شروط استخدام موقع bacresultat.com والتنبيه إلى أن النتائج تقريبية وليست نتائج رسمية.",
 }

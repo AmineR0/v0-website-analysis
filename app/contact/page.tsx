@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Mail } from "lucide-react"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "تواصل معنا | حاسبة معدل البكالوريا المغربية",
   description: "تواصل معنا لأي استفسار أو اقتراح حول حاسبة معدل البكالوريا المغربية",
 }

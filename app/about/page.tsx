@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { GraduationCap } from "lucide-react"
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/about" },
   title: "من نحن | حاسبة معدل البكالوريا المغربية",
   description: "تعرف على موقع bacresultat.com، أداة تعليمية مجانية لحساب معدل البكالوريا المغربية.",
 }

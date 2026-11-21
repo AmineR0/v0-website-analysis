@@ -6,9 +6,9 @@ import { Card, CardContent } from "@/components/ui/card"
 import { guides } from "@/lib/guides"
 
 type GuidePageProps = {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
 export function generateStaticParams() {
@@ -17,8 +17,9 @@ export function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }: GuidePageProps): Metadata {
-  const guide = guides.find((item) => item.slug === params.slug)
+export async function generateMetadata({ params }: GuidePageProps): Promise<Metadata> {
+  const { slug } = await params
+  const guide = guides.find((item) => item.slug === slug)
 
   if (!guide) {
     return {
@@ -43,8 +44,9 @@ export function generateMetadata({ params }: GuidePageProps): Metadata {
   }
 }
 
-export default function GuidePage({ params }: GuidePageProps) {
-  const guide = guides.find((item) => item.slug === params.slug)
+export default async function GuidePage({ params }: GuidePageProps) {
+  const { slug } = await params
+  const guide = guides.find((item) => item.slug === slug)
 
   if (!guide) {
     notFound()
