@@ -34,13 +34,15 @@ export const metadata: Metadata = {
   generator: "v0.app",
 }
 
-export default function RootLayout({
+export default function SiteShell({
+  language,
   children,
 }: Readonly<{
+  language: "ar" | "fr"
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={cairo.variable}>
+    <html lang={language} dir={language === "ar" ? "rtl" : "ltr"} className={cairo.variable}>
       <head>
         <script
           async

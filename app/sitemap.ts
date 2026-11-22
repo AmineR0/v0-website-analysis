@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.bacresultat.com"
 
   const corePages: MetadataRoute.Sitemap = [
+    { url: baseUrl + "/fr", priority: 1 },
     {
       url: baseUrl + "/",
       changeFrequency: "daily",

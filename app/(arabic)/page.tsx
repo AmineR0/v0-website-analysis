@@ -8,13 +8,14 @@ import GeneralCalculator from "@/components/calculators/GeneralCalculator"
 import TrackCalculator from "@/components/calculators/TrackCalculator"
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/" },
+  title: "حساب معدل البكالوريا بالمغرب 2027 | Bac Resultat",
+  alternates: { canonical: "/", languages: { "ar-MA": "/", "fr-MA": "/fr" } },
   openGraph: {
     type: "website",
     url: "/",
     locale: "ar_MA",
     siteName: "Bac Resultat",
-    title: "حساب معدل البكالوريا بالمغرب",
+    title: "حساب معدل البكالوريا بالمغرب 2027",
     description: "احسب معدل الباك والنقطة المطلوبة في الامتحان الوطني.",
   },
 }
@@ -45,8 +46,9 @@ export default function BacResultatPage() {
       <header className="bg-card/95 backdrop-blur-md border-b border-border shadow-sm">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center space-y-3">
+            <Link href="/fr" lang="fr" hrefLang="fr" className="text-primary underline">Français</Link>
             <h1 className="text-4xl md:text-5xl font-bold text-foreground tracking-tight">
-              حساب معدل البكالوريا بالمغرب
+              حساب معدل البكالوريا بالمغرب 2027
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
               احسب معدلك من نقط الجهوي والوطني والمراقبة المستمرة، أو جرّب نقطاً مختلفة قبل صدور النتائج.
@@ -56,16 +58,6 @@ export default function BacResultatPage() {
       </header>
 
       <div>
-        <section className="bg-gradient-to-b from-primary/5 to-transparent py-12 md:py-16">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground">احسب نتائجك بدقة وسهولة</h2>
-              <p className="text-muted-foreground text-lg leading-relaxed">
-                استخدم حاسباتنا الثلاث المتخصصة لمعرفة معدلك، أقل نقطة تحتاجها للنجاح، وميزتك في البكالوريا
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Main Content */}
         <main className="container mx-auto px-4 py-12 md:py-16">
