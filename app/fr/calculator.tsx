@@ -13,19 +13,7 @@ const modes = {
   track: ["3. Moyenne du national par filière", GraduationCap],
 } as const
 type Mode = keyof typeof modes
-type Track = keyof typeof tracks
-const names: Record<Track, string> = {
-  literature: "Lettres", modern: "Sciences humaines", life: "Sciences de la vie et de la Terre",
-  physics: "Sciences physiques", economics: "Sciences économiques", accounting: "Sciences de gestion comptable",
-}
-const subjects: Record<(typeof tracks)[Track][number]["name"], string> = {
-  "اللغة العربية": "Arabe", "اللغة الأجنبية الثانية": "Deuxième langue étrangère",
-  "التاريخ والجغرافيا": "Histoire-géographie", "الفلسفة": "Philosophie",
-  "علوم الحياة والأرض": "Sciences de la vie et de la Terre", "الرياضيات": "Mathématiques",
-  "الفيزياء والكيمياء": "Physique-chimie", "المحاسبة والرياضيات المالية": "Comptabilité et mathématiques financières",
-  "الاقتصاد العام والإحصاء": "Économie générale et statistiques",
-  "الاقتصاد والتنظيم الإداري للمقاولات": "Économie et organisation administrative des entreprises",
-}
+import { names, subjects, type Track } from "@/lib/tracks-fr"
 const format = (n: number) => n.toLocaleString("fr-MA", { minimumFractionDigits: 2, maximumFractionDigits: 2 })
 const mention = (n: number) => n >= 16 ? "Très bien" : n >= 14 ? "Bien" : n >= 12 ? "Assez bien" : n >= 10 ? "Passable" : "Sous le seuil de réussite"
 
@@ -57,7 +45,7 @@ function Panel({ mode }: { mode: Mode }) {
     {label}<Input required name={key} inputMode="decimal" placeholder="0,00" pattern="[0-9]{1,2}([.,][0-9]{1,2})?" title="Note sur 20, avec deux décimales au maximum" />
   </label>
   return <Card>
-    <CardHeader><h2 className="flex items-center gap-3 text-xl font-bold"><Icon aria-hidden="true" className="shrink-0 text-primary" />{title}</h2></CardHeader>
+    <CardHeader><h2 id={mode} className="flex items-center gap-3 text-xl font-bold"><Icon aria-hidden="true" className="shrink-0 text-primary" />{title}</h2></CardHeader>
     <CardContent><form className="grid gap-5" onSubmit={calculate} onChange={() => setResult("")} onReset={() => { setResult(""); setTrack("") }}>
       {mode === "track" && <label className="grid gap-2 font-medium">Filière
         <select required name="track" value={track} onChange={e => setTrack(e.target.value as Track)}

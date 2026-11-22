@@ -24,6 +24,7 @@ export default function Page() {
       <p>Exemple : avec 12 et 16 aux semestres, le contrôle continu vaut 14. Avec 10 au régional et 12 au national, la moyenne estimée est de 12/20. Avec les mêmes notes de classe et du régional, 8 au national donnerait 10/20.</p>
       <p className="text-muted-foreground">Cette estimation pour préparer la session 2027 ne remplace pas le relevé officiel et ne s’applique pas au bac libre.</p>
     </section>
+    <p><Link href="/fr/coefficients-bac" className="text-primary underline">Consulter les coefficients du national par filière et un exemple de calcul</Link></p>
     <footer><Link href="/contact" className="text-primary underline">Contact</Link></footer>
   </main>
 }

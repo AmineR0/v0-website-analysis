@@ -51,6 +51,11 @@ export default async function GuidePage({ params }: GuidePageProps) {
   if (!guide) {
     notFound()
   }
+  const [calculatorUrl, calculatorLabel] = slug === "min-national-score"
+    ? ["/#min-national", "احسب أقل نقطة تحتاجها في الوطني"]
+    : ["how-to-calculate-bac-average-2026", "resit-exam-score"].includes(slug)
+      ? ["/#general-avg", "احسب معدل البكالوريا العام"]
+      : ["/#by-track", "احسب معدل الوطني حسب شعبتك"]
 
   return (
     <div className="min-h-screen bg-background" dir="rtl">
@@ -101,8 +106,8 @@ export default async function GuidePage({ params }: GuidePageProps) {
               </section>
 
               <div className="pt-6 text-center border-t">
-                <Link href="/" className="text-primary hover:text-primary/80 font-medium transition-colors">
-                  ← استخدم الحاسبة الآن
+                <Link href={calculatorUrl} className="text-primary hover:text-primary/80 font-medium transition-colors">
+                  {calculatorLabel}
                 </Link>
               </div>
             </CardContent>

@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { Calculator, CheckCircle2, AlertCircle } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
@@ -57,9 +57,9 @@ export default function GeneralCalculator() {
               <Calculator className="w-7 h-7 text-accent" aria-hidden="true" />
             </div>
             <div className="flex-1 space-y-2">
-              <CardTitle className="text-2xl md:text-3xl text-right font-bold">
+              <h2 id="general-avg" className="text-2xl md:text-3xl text-right font-bold">
                 2. حساب المعدل العام للبكالوريا
-              </CardTitle>
+              </h2>
               <CardDescription className="text-right text-base leading-relaxed">
                 أدخل جميع معدلاتك لحساب المعدل العام النهائي ومعرفة ميزتك
               </CardDescription>

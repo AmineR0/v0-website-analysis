@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const corePages: MetadataRoute.Sitemap = [
     { url: baseUrl + "/fr", priority: 1 },
+    { url: baseUrl + "/fr/coefficients-bac" },
     {
       url: baseUrl + "/",
       changeFrequency: "daily",
