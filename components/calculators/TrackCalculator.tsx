@@ -9,50 +9,7 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 
-const tracks = {
-  literature: [
-    { name: "اللغة العربية", coef: 4 },
-    { name: "اللغة الأجنبية الثانية", coef: 4 },
-    { name: "التاريخ والجغرافيا", coef: 3 },
-    { name: "الفلسفة", coef: 3 },
-  ],
-  modern: [
-    { name: "اللغة العربية", coef: 3 },
-    { name: "اللغة الأجنبية الثانية", coef: 3 },
-    { name: "التاريخ والجغرافيا", coef: 4 },
-    { name: "الفلسفة", coef: 4 },
-  ],
-  life: [
-    { name: "علوم الحياة والأرض", coef: 7 },
-    { name: "الرياضيات", coef: 7 },
-    { name: "الفيزياء والكيمياء", coef: 5 },
-    { name: "اللغة الأجنبية الثانية", coef: 2 },
-    { name: "الفلسفة", coef: 2 },
-  ],
-  physics: [
-    { name: "الفيزياء والكيمياء", coef: 7 },
-    { name: "الرياضيات", coef: 7 },
-    { name: "علوم الحياة والأرض", coef: 5 },
-    { name: "اللغة الأجنبية الثانية", coef: 2 },
-    { name: "الفلسفة", coef: 2 },
-  ],
-  economics: [
-    { name: "الرياضيات", coef: 4 },
-    { name: "المحاسبة والرياضيات المالية", coef: 4 },
-    { name: "الاقتصاد العام والإحصاء", coef: 6 },
-    { name: "الاقتصاد والتنظيم الإداري للمقاولات", coef: 3 },
-    { name: "اللغة الأجنبية الثانية", coef: 2 },
-    { name: "الفلسفة", coef: 2 },
-  ],
-  accounting: [
-    { name: "الرياضيات", coef: 4 },
-    { name: "المحاسبة والرياضيات المالية", coef: 6 },
-    { name: "الاقتصاد العام والإحصاء", coef: 3 },
-    { name: "الاقتصاد والتنظيم الإداري للمقاولات", coef: 6 },
-    { name: "اللغة الأجنبية الثانية", coef: 2 },
-    { name: "الفلسفة", coef: 2 },
-  ],
-}
+import { tracks } from "@/lib/tracks"
 
 const isValidGrade = (value: number) => Number.isFinite(value) && value >= 0 && value <= 20
 
